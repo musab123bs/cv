@@ -36,7 +36,7 @@
 /* ---------- Reset & base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -48,7 +48,7 @@ body {
     color: var(--text-md);
     line-height: 1.7;
     font-size: 16px;
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -334,6 +334,7 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
 
 /* ---------- About ---------- */
 .about__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3.5rem; align-items: start; }
+.about__grid > * { min-width: 0; overflow-wrap: break-word; }
 .about__text p { margin-bottom: 1.2rem; }
 .about__text .lead { color: var(--text-hi); font-size: 1.12rem; font-weight: 500; }
 
